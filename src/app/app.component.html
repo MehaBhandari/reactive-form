@@ -5,10 +5,12 @@
   </head>
   <body>
     <header></header>
-    <div>
+    <div class="custom-padding-2">
       <h2>Hello Meha, Please fill below Form</h2>
       <div> <a routerLink="reactiveFormComponent">CLick Here to go to reactive form</a></div>
-      <router-outlet></router-outlet>
+      <ng-container class="custom-padding-0-5">
+          <router-outlet></router-outlet>
+      </ng-container>      
     </div>
     <footer></footer>
   </body>

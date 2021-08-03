@@ -1,3 +1,36 @@
-<h3>{{formHeading}}</h3>
+<div class="custom-padding-1">
+    <h3>{{formHeading}}</h3>
 
-<a routerLink="/">Go Back to Home Page</a>
+    <a routerLink="/">Go Back to Home Page</a>
+
+    <form [formGroup]="EmployeeForm" (ngSubmit)="onButtonSubmit()">
+        <table align="center" cellspacing="0" cellpadding="0" border="0" bgcolor="fff" style="width: 100%;
+        background-color: #fff; max-width: 600px;">
+            <tr>
+                <td style="display: inline-block; padding: 5px;">
+                    <label for="firstName">First Name: </label>
+                </td>
+                <td style="display: inline-block; padding: 5px;">
+                    <input type="text" formControlName="firstName" />
+                </td>                
+            </tr>
+            <tr>
+                <td style="display: inline-block; padding: 5px;">
+                    <label for="lastName">Last Name: </label>
+                </td>
+                <td style="display: inline-block; padding: 5px;">
+                    <input type="text" formControlName="firstName" />
+                </td>                
+            </tr>
+            <tr>
+                <td style="display: inline-block; padding: 5px;">
+                    <label for="emailId">Email Id: </label>
+                </td>
+                <td style="display: inline-block; padding: 5px;">
+                    <input type="text" formControlName="firstName" />
+                </td>                
+            </tr>
+        </table>
+        <tr> <button type="submit">Submit</button></tr>               
+    </form>
+</div>

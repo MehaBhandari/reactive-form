@@ -3,15 +3,18 @@
 
     <a routerLink="/">Go Back to Home Page</a>
 
-    <form [formGroup]="EmployeeForm" (ngSubmit)="onButtonSubmit()">
+    <form [formGroup]="employeeForm" (ngSubmit)="onButtonSubmit()">
         <table align="center" cellspacing="0" cellpadding="0" border="0" bgcolor="fff" style="width: 100%;
         background-color: #fff; max-width: 600px;">
-            <tr>
+            <tr [ngClass]="{'hasError': employeeForm.get('firstName').errors}">
                 <td style="display: inline-block; padding: 5px;">
-                    <label for="firstName">First Name: </label>
+                    <label for="firstName">First Name: </label>                    
                 </td>
                 <td style="display: inline-block; padding: 5px;">
                     <input type="text" formControlName="firstName" />
+                    <ng-template [ngIf]="employeeForm.get('firstName').errors">
+                        <div class="name">Incorrect first Name</div>
+                    </ng-template>
                 </td>                
             </tr>
             <tr>
@@ -19,7 +22,10 @@
                     <label for="lastName">Last Name: </label>
                 </td>
                 <td style="display: inline-block; padding: 5px;">
-                    <input type="text" formControlName="firstName" />
+                    <input type="text" formControlName="lastName" />
+                    <ng-template [ngIf]="employeeForm.get('lastName').errors">
+                        <div class="name">Incorrect last Name</div>
+                    </ng-template>
                 </td>                
             </tr>
             <tr>
@@ -27,10 +33,17 @@
                     <label for="emailId">Email Id: </label>
                 </td>
                 <td style="display: inline-block; padding: 5px;">
-                    <input type="text" formControlName="firstName" />
+                    <input type="text" formControlName="emailId" />
+                    <ng-template [ngIf]="employeeForm.get('emailId').errors">
+                        <div class="name">Incorrect emailId</div>
+                    </ng-template>
                 </td>                
             </tr>
-        </table>
-        <tr> <button type="submit">Submit</button></tr>               
+            <tr> 
+                <td style="display: inline-block; padding: 5px;">
+                    <input type="submit" [disabled]="!employeeForm.valid" value="Submit" />
+                </td> 
+            </tr>
+        </table>                   
     </form>
 </div>

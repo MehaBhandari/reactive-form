@@ -10,19 +10,22 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 
 export class ReactiveFormComponent implements OnInit {
     public formHeading = 'This is the Reactive Form: ';
-    EmployeeForm: FormGroup;
+    employeeForm: FormGroup;
 
     constructor(private fb: FormBuilder) {}
 
     ngOnInit() {
-        this.EmployeeForm = this.fb.group({
-            firstName: [],
-            lastName: [],
-            emailId: []
+        this.employeeForm = this.fb.group({
+            firstName: ['', [Validators.required, Validators.minLength(3)]],
+            lastName: ['', [Validators.required, Validators.minLength(1)]],
+            emailId: ['', Validators.required]
         });
     }
 
     public onButtonSubmit() {
-        alert('Submitted');
+        if(this.employeeForm.valid) {
+            alert('Submitted');
+        }        
+        console.log(this.employeeForm.value);
     }
 }

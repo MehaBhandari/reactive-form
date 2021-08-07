@@ -4,43 +4,48 @@
     <a routerLink="/">Go Back to Home Page</a>
 
     <form [formGroup]="employeeForm" (ngSubmit)="onButtonSubmit()">
-        <table align="center" cellspacing="0" cellpadding="0" border="0" bgcolor="fff" style="width: 100%;
-        background-color: #fff; max-width: 600px;">
-            <tr [ngClass]="{'hasError': employeeForm.get('firstName').errors}">
-                <td style="display: inline-block; padding: 5px;">
+        <table class="form-styles" cellspacing="0" cellpadding="0">
+            <tr>
+                <td>
                     <label for="firstName">First Name: </label>                    
                 </td>
-                <td style="display: inline-block; padding: 5px;">
-                    <input type="text" formControlName="firstName" />
-                    <ng-template [ngIf]="employeeForm.get('firstName').errors">
-                        <div class="name">Incorrect first Name</div>
+                <td [ngClass]="{'hasError': (employeeForm.get('firstName').errors && (employeeForm.get('firstName').errors.touched || employeeForm.get('firstName').dirty))}">
+                    <input type="text" formControlName="firstName" />                    
+                </td>
+                <td [ngClass]="{'hasError': (employeeForm.get('firstName').errors && (employeeForm.get('firstName').errors.touched || employeeForm.get('firstName').dirty))}">
+                    <ng-template [ngIf]="(employeeForm.get('firstName').errors && (employeeForm.get('firstName').errors.touched || employeeForm.get('firstName').dirty))">
+                        <label class="name">Incorrect first Name</label>
                     </ng-template>
-                </td>                
+                </td>             
             </tr>
             <tr>
-                <td style="display: inline-block; padding: 5px;">
+                <td>
                     <label for="lastName">Last Name: </label>
                 </td>
-                <td style="display: inline-block; padding: 5px;">
-                    <input type="text" formControlName="lastName" />
-                    <ng-template [ngIf]="employeeForm.get('lastName').errors">
-                        <div class="name">Incorrect last Name</div>
+                <td [ngClass]="{'hasError': (employeeForm.get('lastName').errors && (employeeForm.get('lastName').errors.touched || employeeForm.get('lastName').dirty))}">
+                    <input type="text" formControlName="lastName" />                    
+                </td>
+                <td [ngClass]="{'hasError': (employeeForm.get('lastName').errors && (employeeForm.get('lastName').errors.touched || employeeForm.get('lastName').dirty))}">
+                    <ng-template [ngIf]="(employeeForm.get('lastName').errors && (employeeForm.get('lastName').errors.touched || employeeForm.get('lastName').dirty))">
+                        <label class="name">Incorrect last Name</label>
                     </ng-template>
-                </td>                
+                </td>        
             </tr>
             <tr>
-                <td style="display: inline-block; padding: 5px;">
+                <td>
                     <label for="emailId">Email Id: </label>
                 </td>
-                <td style="display: inline-block; padding: 5px;">
-                    <input type="text" formControlName="emailId" />
-                    <ng-template [ngIf]="employeeForm.get('emailId').errors">
-                        <div class="name">Incorrect emailId</div>
+                <td [ngClass]="{'hasError': (employeeForm.get('emailId').errors && (employeeForm.get('emailId').errors.touched || employeeForm.get('emailId').dirty))}">
+                    <input type="text" formControlName="emailId" />                    
+                </td>
+                <td [ngClass]="{'hasError': (employeeForm.get('emailId').errors && (employeeForm.get('emailId').errors.touched || employeeForm.get('emailId').dirty))}">
+                    <ng-template [ngIf]="(employeeForm.get('emailId').errors && (employeeForm.get('emailId').errors.touched || employeeForm.get('emailId').dirty))">
+                        <label class="name">Incorrect emailId</label>
                     </ng-template>
-                </td>                
+                </td>              
             </tr>
             <tr> 
-                <td style="display: inline-block; padding: 5px;">
+                <td>
                     <input type="submit" [disabled]="!employeeForm.valid" value="Submit" />
                 </td> 
             </tr>

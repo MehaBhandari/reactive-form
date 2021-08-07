@@ -5,7 +5,7 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 @Component({
     selector: 'app-reactive-form',
     templateUrl: './reactive-form.component.html',
-    styleUrls: ['../app.component.scss']
+    styleUrls: ['../app.component.scss', './reactive-form.component.scss']
 })
 
 export class ReactiveFormComponent implements OnInit {

@@ -1,0 +1,22 @@
+.hasError {
+    color: red !important;
+    input {
+        border: 1px solid red !important;
+        color: red !important;
+    }
+    
+}
+.form-styles {
+    margin-top: 2rem;
+    padding: 1rem;
+    border: 2px solid black;
+    align-content: center;
+    width: 100%;
+    td {
+        display: inline-block;
+        padding: 1rem;
+    }
+    td:first-child { 
+        width: 8rem; 
+    }
+}

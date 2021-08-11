@@ -10,11 +10,14 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 
 export class ReactiveFormComponent implements OnInit {
     public formHeading = 'This is the Reactive Form: ';
-    employeeForm: FormGroup;
+    public employeeForm: FormGroup;
 
     constructor(private fb: FormBuilder) {}
 
     ngOnInit() {
+        this.createEmployeeForm();
+    }
+    private createEmployeeForm() {
         this.employeeForm = this.fb.group({
             firstName: ['', [Validators.required, Validators.minLength(3)]],
             lastName: ['', [Validators.required, Validators.minLength(1)]],

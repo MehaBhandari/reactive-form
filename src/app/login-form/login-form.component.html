@@ -1,0 +1,17 @@
+<ng-container>
+    <form [formGroup] = "loginForm" class="form-styles" (ngSubmit)="onButtonSubmit()">
+        <ng-container>
+        <div>
+            <span>User Id: </span> 
+            <input class="leftMarginClass" formControlName="emailId" type="email" required/>
+        </div>
+        <div>
+            <span>Password: </span>
+            <input type="password" formControlName="password" required/>
+        </div>
+        <div>
+            <input type="submit" />
+        </div>
+        </ng-container>
+    </form>
+</ng-container>

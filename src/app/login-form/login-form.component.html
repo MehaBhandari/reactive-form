@@ -10,7 +10,7 @@
             <input type="password" formControlName="password" required/>
         </div>
         <div>
-            <input type="submit" />
+            <input [disabled]="!loginForm.valid" type="submit" />
         </div>
         </ng-container>
     </form>

@@ -25,7 +25,7 @@ export class LoginFormComponent implements OnInit {
       if(this.loginForm.valid) {
         this.router.navigate(['reactiveFormComponent']);
       } else {
-        alert('Nooo');
+        alert('Invalid Form');
       }
     }
   }

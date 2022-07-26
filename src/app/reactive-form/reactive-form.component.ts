@@ -9,7 +9,7 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 })
 
 export class ReactiveFormComponent implements OnInit {
-    public formHeading = 'This is the Reactive Form: ';
+    public formHeading = 'This is the Reactive Form:';
     public employeeForm: FormGroup;
 
     constructor(private fb: FormBuilder) {}

@@ -9,7 +9,7 @@ import {Router} from '@angular/router';
 })
 
 export class LoginFormComponent implements OnInit {
-  public formHeading = 'This is the Template Form:';
+  public formHeading = 'Please Login to proceed:';
     public loginForm: FormGroup;
   
     constructor(private fb: FormBuilder, private router: Router) {}

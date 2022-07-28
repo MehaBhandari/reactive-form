@@ -8,7 +8,8 @@ import {ProductDetail} from './product-detail/product-detail.component';
 const routes: Routes = [{
     path: '',
     component: CrudOperations
-    }, {
+    },
+    {
     path: 'productDetail',
     component: ProductDetail
     }

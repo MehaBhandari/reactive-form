@@ -7,14 +7,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {LoginFormComponent} from './login-form/login-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
-import { CrudOperations } from './crud-operations/crud-operations.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginFormComponent,
-    ReactiveFormComponent,
-    CrudOperations
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,

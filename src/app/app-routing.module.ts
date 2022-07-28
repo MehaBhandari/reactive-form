@@ -9,7 +9,8 @@ import {CrudOperations} from './crud-operations/crud-operations.component';
 const routes: Routes = [
   {path: 'reactiveFormComponent', component: ReactiveFormComponent, pathMatch: 'full'},
   {path: 'loginFormComponent', component: LoginFormComponent, pathMatch: 'full'},
-  {path: 'crudOperations', component: CrudOperations, pathMatch: 'full'}
+  {path: 'crudOperations', 
+  loadChildren: () => import('./crud-operations/crud-operations.module').then(m => m.CrudOperationsModule)}
 ]
 
 @NgModule({
